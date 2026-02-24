@@ -186,3 +186,59 @@ def test_equality_notimplemented():
     result = (calc1 == "not a calculation")
 
     assert result is False
+
+# Added Test Coverage
+# Test Calculation Failed Exception 
+def test_calculation_failure_wrapped():
+    """
+    Force an ArithmeticError inside the Root operation so the code
+    hits the 'Calculation failed: ...' OperationError wrapper.
+    """
+    # Arrange
+    # Non-zero Decimal, but float(y) underflows to 0.0
+    tiny_y = Decimal("1E-1000")
+
+    # Act & Assert
+    with pytest.raises(OperationError, match="Calculation failed"):
+        Calculation(operation="Root", operand1=Decimal("9"), operand2=tiny_y)
+
+# Test __str__ method
+def test_str_representation():
+    """
+    Test the __str__ method returns the expected string.
+    """
+    calc = Calculation(operation="Addition", operand1=Decimal("2"), operand2=Decimal("3"))
+    expected = "Addition(2, 3) = 5"
+
+    result = str(calc)
+
+    assert result==expected
+
+# Test __repr__ method 
+def test_repr_representation():
+    """
+    Test the __repr__ method returns the expected detailed string.
+    """
+    calc = Calculation(operation="Addition", operand1=Decimal("2"), operand2=Decimal("3"))
+
+    expected = (
+        f"Calculation(operation='Addition', "
+        f"operand1=2, "
+        f"operand2=3, "
+        f"result=5, "
+        f"timestamp='{calc.timestamp.isoformat()}')"
+    )
+
+    result = repr(calc)
+
+    assert result == expected
+
+def test_equality_notimplemented():
+    """ 
+        Tests the equality method returns NotImplemented
+    """  
+    calc1 = Calculation(operation="Addition", operand1=Decimal("2"), operand2=Decimal("3"))
+    
+    result = (calc1 == "not a calculation")
+
+    assert result is False
