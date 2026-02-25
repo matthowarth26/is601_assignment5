@@ -4,28 +4,28 @@ Modular calculator application that integrates advanced design patterns, persist
 
 # Key Features
 
-REPL Interface
-Design Patterns Integration
-   Observer Pattern
-   Memento Pattern
-   Strategy Pattern
-   Factory Pattern
-   Facade Pattern 
-History Management utilizing pandas dataframes
-Auto-Saving and Loading history to CSV files 
-User Commands - help, history, exit, clear, undo, redo, save and load 
-Comprehensive Error handling to manage invalid inputs and exceptions 
+- REPL Interface
+- Design Patterns Integration
+   - Observer Pattern
+   - Memento Pattern
+   - Strategy Pattern
+   - Factory Pattern
+   - Facade Pattern 
+- History Management utilizing pandas dataframes
+- Auto-Saving and Loading history to CSV files 
+- User Commands - help, history, exit, clear, undo, redo, save and load 
+- Comprehensive Error handling to manage invalid inputs and exceptions 
 
 # Supported Commands
 
-add, subtract, multiply, divide, power, root - Perform calculations
-history - Show calculation history
-clear - Clear calculation history
-undo - Undo the last calculation
-redo - Redo the last undone calculation
-save - Save calculation history to file
-load - Load calculation history from file
-exit - Exit the calculator
+- add, subtract, multiply, divide, power, root - Perform calculations
+- history - Show calculation history
+- clear - Clear calculation history
+- undo - Undo the last calculation
+- redo - Redo the last undone calculation
+- save - Save calculation history to file
+- load - Load calculation history from file
+- exit - Exit the calculator
 
 # 📦 Project Setup
 
